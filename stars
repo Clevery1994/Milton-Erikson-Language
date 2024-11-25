@@ -1,0 +1,131 @@
+"""
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بطاقات عشوائية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 400px;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #ffcc00;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #ffaa00;
+            transform: scale(1.05);
+        }
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* Animated Stars Background */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px) 0 0,
+                        radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px) 0 0,
+                        radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px) 0 0;
+            background-size: 50px 50px, 100px 100px, 150px 150px;
+            animation: move-stars 20s linear infinite;
+        }
+        @keyframes move-stars {
+            from {
+                background-position: 0 0, 0 0, 0 0;
+            }
+            to {
+                background-position: 1000px 1000px, 500px 500px, 250px 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <h1>بطاقات عشوائية - ميلتون إريكسون</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Milton_Erickson.jpg" alt="Milton Erickson">
+    <div id="card" class="card">اضغط على الزر لتظهر بطاقة عشوائية</div>
+    <button onclick="shuffleCard()">اختر بطاقة عشوائية</button>
+
+    <script>
+        const cards = [
+            "قراءة الأفكار",
+            "إخفاء المصدر",
+            "السبب والأثر",
+            "التكافؤ المركب",
+            "الافتراضات المسبقة",
+            "أدوات التعميم",
+            "صيغ الإمكان والضرورة",
+            "المصدرة",
+            "الأفكار غير المحددة",
+            "أسئلة المحادثة",
+            "حذف القائل",
+            "حذف المقارن به",
+            "مجاراة الحالة الراهنة للشخص",
+            "الخيارات المتساوية",
+            "عدم تحديد المسند إليه",
+            "الحكم",
+            "الحذف البسيط",
+            "جملتان في جملة",
+            "التأكيد الإيجابي",
+            "سؤال الاستفسار المؤدي إلى نعم",
+            "الشاهد أو المرجع",
+            "الإستعارة",
+            "الغموض",
+            "التركيز على المحتوى",
+            "الأسئلة المدفونة",
+            "(خفض رفع الصوت) الإيحاءات المدفونة",
+            "الإيحاءات المدفونة (بطء أو سرعة اللفظ)",
+            "الإيحاءات المدفونة (كتابيًا)",
+            "الإنتفاع أو الرد الدبلوماسي"
+        ];
+
+        function shuffleCard() {
+            const randomIndex = Math.floor(Math.random() * cards.length);
+            const cardText = cards[randomIndex];
+            document.getElementById("card").textContent = cardText;
+        }
+    </script>
+</body>
+</html>
+"""
+
