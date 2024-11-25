@@ -1,4 +1,4 @@
-"""
+ """
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -86,6 +86,8 @@
     <div id="card" class="card">اضغط على الزر لتظهر بطاقة عشوائية</div>
     <button onclick="shuffleCard()">اختر بطاقة عشوائية</button>
 
+    <audio id="shuffleSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
     <script>
         const cards = [
             "قراءة الأفكار",
@@ -120,12 +122,28 @@
         ];
 
         function shuffleCard() {
-            const randomIndex = Math.floor(Math.random() * cards.length);
-            const cardText = cards[randomIndex];
-            document.getElementById("card").textContent = cardText;
+            const shuffleSound = document.getElementById("shuffleSound");
+            const cardElement = document.getElementById("card");
+            
+            // Play shuffle sound
+            shuffleSound.play();
+
+            // Show shuffling message and disable button temporarily
+            cardElement.textContent = "جاري خلط البطاقات...";
+            const button = document.querySelector("button");
+            button.disabled = true;
+
+            // Simulate shuffle delay
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * cards.length);
+                const cardText = cards[randomIndex];
+                cardElement.textContent = cardText;
+                button.disabled = false;
+            }, 2000); // 2 seconds delay for shuffling
         }
     </script>
 </body>
 </html>
 """
+
 
